@@ -1,0 +1,16 @@
+body {
+    background-color: #1A1B1F;
+    color: #8a8a8a;
+}
+
+.container {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(145deg, #1c1d21, #17181c);
+    box-shadow: 3px 3px 6px #101114,
+        -3px -3px 6px #24252a;
+}
