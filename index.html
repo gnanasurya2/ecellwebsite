@@ -7,25 +7,21 @@
   <title>E-cell</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
+<style>
+  body {
+    margin: 0;
+  }
+
+  canvas {
+    display: block;
+  }
+</style>
 
 <body>
-  <header>
-    <div class="logo_div">
-      <img src="./ecell.png" alt="" class="logo" />
-    </div>
-    <div id="neuburger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-  </header>
-  <div class="container" id="first">
-    <h2 class="title">Internet Access from the Future</h2>
-    <p class="para">Magic decentralizes access to the internet. Powered by carriers both big and small, Magic is a
-      network of networks — covering the world with secure, fast, and reliable connectivity.</p>
-  </div>
-  <div class="container"></div>
+  <canvas id="canvas"></canvas>
+  <script src="./perlin.js"></script>
+  <script src="./three.js"></script>
+  <script src="./main.js"></script>
 </body>
-<script src="./main.js"></script>
 
 </html>
