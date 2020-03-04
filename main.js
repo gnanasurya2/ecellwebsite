@@ -4,7 +4,7 @@ var renderer = new THREE.WebGLRenderer({
 });
 
 // default bg canvas color //
-renderer.setClearColor(0x7b7b7b);
+renderer.setClearColor(0x000000);
 
 //  use device aspect ratio //
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -21,14 +21,16 @@ var camera = new THREE.PerspectiveCamera(
 camera.position.z = 4;
 
 
-var geometry = new THREE.SphereGeometry(1, 128, 128);
+var geometry = new THREE.SphereGeometry(0.2, 100, 100);
 const material = new THREE.MeshPhongMaterial({
     color: 0x347deb, // red (can also use a CSS color string here)
-    flatShading: true,
-    shininess: 150
+    shininess: 70
 });
 var sphere = new THREE.Mesh(geometry, material);
-var light = new THREE.AmbientLight(0x404040);
+const color = 0xFFFFFF;
+const intensity = 1;
+const light = new THREE.DirectionalLight(color, intensity);
+light.position.set(0, 0, 10);
 scene.add(light);
 scene.add(sphere);
 
@@ -46,7 +48,7 @@ var update = function () {
     var k = 2;
     for (var i = 0; i < sphere.geometry.vertices.length; i++) {
         var p = sphere.geometry.vertices[i];
-        p.normalize().multiplyScalar(1 + 0.3 * noise.perlin3(p.x * k + time, p.y * k, p.z * k));
+        p.normalize().multiplyScalar(0.5 + 0.1 * noise.perlin3(p.x * k + time, p.y * k, p.z * k));
     }
     sphere.geometry.computeVertexNormals();
     sphere.geometry.normalsNeedUpdate = true;
