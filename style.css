@@ -1,5 +1,36 @@
-html,
 body {
-    background-color: #ffffff margin:0;
-    overflow: hidden
+    background-color: black;
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+#canvas {
+    z-index: -1;
+    position: fixed;
+}
+
+.title {
+    color: white;
+    z-index: 1;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+}
+
+.burger {
+    color: white;
+    margin-right: 15px;
 }
